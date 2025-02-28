@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khatabook</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="px-8">
+    <div class="flex justify-between py-2">
+        <h1 class="py-2 font-bold uppercase ">Khatabook</h1>
+        <a href="/">Home</a >
+        <a href="/create">createNew</a >
+        <a href="/hisaab">Hisaab</a >
+    </div>
+    <h2>All hissab kitab</h2>
+
+    <% if(files.length> 0) { %>
+        <% files.forEach(file => { %>
+        <div
+        class="bg-blue-500 mt-2 cursor-pointer h-10 w-1/4 rounded-md flex justify-between px-2 items-center text-white select-none text-[1.55vw]">
+        <div class="flex gap-2 items-center">
+            <h1><%= file.split('.')[0] %></h1>
+            <a href="/hisaab/<%= file %>">
+                <i class="ri-arrow-left-circle-fill text-2xl rotate-180"></i>
+            </a>
+        </div>
+        <div>
+        <a href="/edit/<%= file %>">
+            <i class="ri-pencil-line text-black bg-white rounded-full mx-1 p-1"></i>
+        </a> 
+        <a href="/delete/<%= file %>">
+            <i class="ri-delete-bin-6-line text-red-500 bg-white rounded-full p-1"></i>
+        </a> 
+        </div>
+
+    </div>
+    <% }) %>
+        <% } else{ %>
+            <h3 class="font-bold text-2xl capitalize">No files found...</h3>
+       <% } %>
+      
+</body>
+
+</html>

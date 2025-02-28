@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khatabook</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="px-8 bg-zinc-900 text-white">
+    <div class="flex justify-between py-2">
+        <h1 class="py-2 font-bold uppercase ">Khatabook</h1>
+        <a href="/">Home</a >
+        <a href="/create">createNew</a >
+        <a href="/hisaab">Hisaab</a >
+    </div>
+    <h2 class="capitalize">create new hissab</h2>
+    <form class="flex text-sm flex-col mt-2 w-1/2 gap-4" action="/update/<%=filename%>" method="post">
+        <h1 class=" text-white px-2 w-1/2 py-1 outline-gray-500 text-lg  rounded-sm ">
+            You are editing hisaab of
+            <span class="text-sky-500">
+                <%= filename.split('.')[0] %>
+            </span>
+            date.
+        </h1>
+
+        <textarea class="outline-2 resize-none text-white p-2 w-full h-40 rounded-md outline-gray-500" name="saman"
+            placeholder="Daal,Aata,Cheeni"> <%= filedata %> </textarea>
+            <input type="submit"
+            class="bg-blue-500 mt-4 w-fit text-2xl hover:bg-blue-600 text-white cursor-pointer font-semibold px-3 rounded-md" value="update">
+        </form>
+
+</body>
+
+</html>

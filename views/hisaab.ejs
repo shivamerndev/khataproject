@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khatabook</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body class="px-8">
+    <h1 class="py-2 font-bold uppercase ">Khatabook</h1>
+    <h2 class="text-xl capitalize font-semibold">hissab of <span class="text-blue-700"><%= filename.split('.')[0] %> </span> date.</h2>     
+    <p><%= filedata %> </p> 
+    <a href="/edit/<%=filename %> ">Edit this Hisaab.</a>
+</body>
+</html>
